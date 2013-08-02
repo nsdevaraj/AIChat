@@ -21,10 +21,9 @@ $(function() {
 		
 		$('.input input').val('');
 		updateChat(you, input);
-		$.get("http://localhost:3000/query/"+input, function(data) {
+		$.get("/query/"+input, function(data) {
           $('.result').html(data);  
-        reply = data; 
-
+        reply = data;  
 		if(reply == null || reply.length==0) return;
 		
 		var latency = Math.floor((Math.random() * (delayEnd - delayStart)) + delayStart);
